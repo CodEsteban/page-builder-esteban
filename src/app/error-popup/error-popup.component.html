@@ -1,0 +1,11 @@
+<div class="dark-screen" (click)="toggleError()">
+   <div class="popup" (click)="$event.stopPropagation()" >
+      <div class="bar">
+         <h3>{{currentError?.type}}</h3>
+         <div class="quit" (click)="toggleError()"><p>X</p></div>
+      </div>
+      <div class="details">
+         <p class="details-text">{{currentError?.details}}</p>
+      </div>
+   </div>
+</div>

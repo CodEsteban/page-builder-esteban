@@ -1,0 +1,10 @@
+FROM archlinux
+RUN pacman-key --init
+RUN pacman -Syu nodejs npm --noconfirm
+RUN npm install -g @angular/cli
+
+ENV PATH="${PATH}:/usr/bin"
+RUN ng config -g cli.warnings.versionMismatch false
+WORKDIR /usr/app/
+EXPOSE 4200:4200
+

@@ -1,0 +1,33 @@
+<div class="left">
+   <div class="name">
+      <div class="one">
+         <p>juan</p>
+      </div>
+      <div class="two">
+         <p>esteban</p>
+      </div>
+      <div class="three">
+      <p>ospina</p>
+      </div>
+      <div class="five">
+         <p>benitez</p>
+      </div>
+   </div>
+   <div class="dropdown-all">
+      <button (click)="toggle()" class="dropdown-button ten">Dropdown</button>
+      <div [hidden]="!isButtonClicked"class="dropdown-content">
+         <a href="#" class="six">one</a>
+         <a href="#" class="seven">two</a>
+         <a href="#" class="eight">three</a>
+      </div>
+   </div>
+</div>
+   <div class="dropdown-all mobile">
+      <button (click)="toggle()" class="dropdown-button ten">Dropdown</button>
+      <div [hidden]="!isButtonClicked"class="dropdown-content">
+         <a href="#" class="six">one</a>
+         <a href="#" class="seven">two</a>
+         <a href="#" class="eight">three</a>
+      </div>
+   </div>
+

@@ -1,0 +1,22 @@
+#add-button {
+   width: 60px;
+   height: 60px;
+   font-family: Hack;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 35px;
+   background-color: #f3fcff;
+}
+#add-button :hover{
+   background-color: black;
+   color: white
+}
+p {
+   padding-bottom: 3px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+}

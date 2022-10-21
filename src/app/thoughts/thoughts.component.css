@@ -1,0 +1,42 @@
+app-navbar {
+   position: absolute;
+   top: 0px;
+}
+app-new-thought-screen {
+   position: fixed;
+   top:0%;
+   z-index: 1;
+}
+app-add-thought {
+   display: flex;
+   margin-top: 130px;
+   justify-content: center;
+}
+app-grid-thoughts {
+   display: flex;
+   justify-content: center;
+}
+app-box-details {
+   position: fixed;
+   right: 0;
+   top: 0px;
+   transition: width .5s ease;
+}
+.show-panel {
+   width: 80vw;
+   transition: width .5s ease;
+}
+.hide-panel {
+   width: 0;
+   transition: width .5s ease;
+}
+.normal-grid {
+   margin-top: 70px;
+   margin-right: 0;
+   transition: margin-top .7s ease,margin-right .5s ease;
+}
+.resized-grid {
+   margin-top: 3%;
+   margin-right: 80vw;
+   transition: margin-top .7s ease,margin-right .5s ease;
+}

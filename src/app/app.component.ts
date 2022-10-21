@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ErrorHandlingService } from './error-handling.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'page-builder';
+  isError = false;
+  constructor(private errorService: ErrorHandlingService){
+    errorService.currentError.subscribe(msg => this.isError = msg)
+  }
 }

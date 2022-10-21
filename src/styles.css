@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+   font-family: "hack";
+   src: local("Hack"), url(./assets/fonts/hack/Hack-Regular.ttf);
+}
+@font-face {
+   font-family: "poppins";
+   src: local("Poppins"), url(./assets/fonts/poppins/Poppins-Regular.ttf);
+}
+@font-face {
+   font-family: "cormorant";
+   src: local("Cormorant"), url(./assets/fonts/cormorant/CormorantGaramond-Regular.ttf);
+}
+
+body, html{
+   background-color: rgb(255, 236, 207);
+   height: 100%;
+   overflow: auto;
+} 
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+.unselectable, p, h3, label  {
+   -webkit-user-select: none; 
+   -moz-user-select: none;  
+   -ms-user-select: none;
+   user-select: none;
+}

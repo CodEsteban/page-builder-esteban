@@ -1,0 +1,19 @@
+<div (click)="toggleShow()" class="dark-screen">
+   <div class="popup" (click)="$event.stopPropagation()" >
+      <div class="preview">
+         <input  id="fpreview"[(ngModel)]="preview.preview" maxlength="6"/>
+         <app-box-thought [thought]="preview"[dummy]="true" ></app-box-thought>
+         <label for="fcode">Código</label>
+         <input type="text" [(ngModel)]="code" id="fcode" name="fcode"maxlength="12">
+         <div id="ok-button" (keyup.enter)="onOK()" (click)="onOK()"><p>Ok</p></div>
+      </div>
+      <div class="message">
+         <form>
+            <label for="ftitle">Título</label>
+            <input type="text" [(ngModel)]="title" id="ftitle" name="ftitle">
+            <label for="ftext">Texto</label>
+            <textarea id="ftext" [(ngModel)]="history" rows="6" cols="50" name="ftext"></textarea>
+         </form>
+      </div>
+   </div>
+</div>

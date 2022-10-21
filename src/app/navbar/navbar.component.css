@@ -1,0 +1,100 @@
+.one {
+   background-color: #413C58;
+   color: white;
+}
+.two {
+   background-color: #A3C4BC;
+}
+.three {
+   background-color: #BFD7B5;
+}
+.four {
+   background-color: #E7EFC5;
+}
+.five {
+   background-color: #F2DDA4;
+}
+.six {
+   background-color: #EFC7C2;
+}
+.seven {
+   background-color: #FFE5D4;
+}
+.eight {
+   background-color: #BFD3C1;
+}
+.nine {
+   background-color: #68A691;
+}
+.ten {
+   background-color: #694F5D;
+}
+
+.left {
+   display: flex;
+   margin: 5px;
+   position: fixed;
+   flex-direction: row;
+   justify-content: space-between;
+   width:100%;
+}
+div {
+   font-family: Hack;
+   padding:10px;
+   border: 0;
+}
+
+.name {
+   display: flex;
+   flex-direction: row;
+}
+.dropdown-button {
+  color: white;
+  padding: 10px;
+  font-size: 15px;
+  font-family: Hack;
+  border: none;
+}
+
+.dropdown-all {
+   display: block;
+   margin-right: 10px;
+}
+
+.dropdown-content {
+  background-color: white;
+  position: fixed;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  right: 30px;
+  top: 70px;
+}
+a {
+  font-family: Hack;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.mobile {
+   display: none;
+}
+
+
+a:hover {background-color: lightyellow}
+
+button:hover {
+   background-color: #503743;
+}
+
+@media (max-width:510px) { 
+   .dropdown-all {
+      position: absolute;
+      right: 10px;
+      top: 70px;
+   }
+   .dropdown-content {
+      top: 130px;
+   }
+}

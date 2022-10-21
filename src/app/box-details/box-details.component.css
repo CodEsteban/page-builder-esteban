@@ -1,0 +1,47 @@
+.all {
+   display: flex;
+   height: 100vh;
+   width: 80vw;
+   background-color: rgb(251, 246, 242);
+}
+h3 {
+   font-family: Cormorant;
+   font-size: 240%;
+}
+p {
+   padding-top: 20px;
+   font-family: Poppins;
+   font-size: 140%;
+}
+.quit-box {
+   position: absolute;
+   display: flex;
+   background-color: lightcoral;
+   width: 40px;
+   height: 40px;
+   margin: 2%;
+   padding:3px;
+   align-content: center;
+   justify-content: center;
+   font-family: Hack;
+   font-size: 30px;
+   color:  white;
+}
+.content {
+   display: flex;
+   flex-direction: column;
+   word-wrap: break-word;
+   background-color: rgb(255, 255, 255);
+   height: fit-content;
+   width: fit-content;
+   margin: 0 20%;
+   margin-top: 20%;
+   padding: 50px;
+}
+
+@media only screen and (max-width: 930px) {
+   .content {
+      margin: 0;
+   margin-top: 20%;
+   }
+}
