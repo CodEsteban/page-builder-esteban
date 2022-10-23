@@ -13,6 +13,7 @@ import { ThoughtsComponent } from './thoughts/thoughts.component';
 import { AddThoughtComponent } from './add-thought/add-thought.component';
 import { NewThoughtScreenComponent } from './new-thought-screen/new-thought-screen.component';
 import { ErrorPopupComponent } from './error-popup/error-popup.component';
+import {AngularFittextModule} from 'angular-fittext';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ErrorPopupComponent } from './error-popup/error-popup.component';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    TransferHttpCacheModule
+    TransferHttpCacheModule,
+    AngularFittextModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

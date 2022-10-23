@@ -1,1 +1,10 @@
-<div [ngClass]="{'touched': touched}" (click)="toggleTouch()" [ngStyle]="{'background-color': bgColor, 'color': bgColor}"><p>{{thought?.preview}}</p></div>
+<div 
+[ngClass]="{'touched': touched}" (click)="toggleTouch()" 
+[ngStyle]="{'background-color': bgColor, 'color': bgColor}">
+   <p 
+   [ngStyle]="{'color': fgColor}"
+   [ngClass]="{'six-char': (thought?.preview!.length < 6),
+   'eight-ten-char': (thought?.preview!.length > 6)}">
+   {{thought?.preview}}
+   </p>
+</div>

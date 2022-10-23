@@ -16,7 +16,11 @@ body, html{
    background-color: rgb(255, 236, 207);
    height: 100%;
    overflow: auto;
+   min-height: 100%;
 } 
+app-thoughts {
+   min-height: 100%;
+}
 * {
    margin: 0;
    padding: 0;

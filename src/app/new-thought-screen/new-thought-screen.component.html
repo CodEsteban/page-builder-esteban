@@ -1,10 +1,10 @@
 <div (click)="toggleShow()" class="dark-screen">
    <div class="popup" (click)="$event.stopPropagation()" >
       <div class="preview">
-         <input  id="fpreview"[(ngModel)]="preview.preview" maxlength="6"/>
+         <input maxlength="18" id="fpreview"[(ngModel)]="preview.preview"/>
          <app-box-thought [thought]="preview"[dummy]="true" ></app-box-thought>
          <label for="fcode">Código</label>
-         <input type="text" [(ngModel)]="code" id="fcode" name="fcode"maxlength="12">
+         <input type="text" inputmode="numeric" [(ngModel)]="code" id="fcode" name="fcode">
          <div id="ok-button" (keyup.enter)="onOK()" (click)="onOK()"><p>Ok</p></div>
       </div>
       <div class="message">
