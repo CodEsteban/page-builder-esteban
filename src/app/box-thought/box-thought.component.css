@@ -25,16 +25,19 @@ p {
    text-overflow: ellipsis;
 }
 
-.six-char {
+.three-char {
    font-size: 20px;
 }
 
-.eight-ten-char {
+.four-char {
+   font-size: 18px;
+}
+.five-char {
+   font-size: 12.6px;
+}
+.six-char {
    font-size: 12px;
-   color: #614143;
-   color: #5e413f;
-   color: #5f483b;
-   color: #47513a;
-   color: #385147;
-   color: #3d435d;
+}
+.seven-char {
+   font-size: 9.5px;
 }

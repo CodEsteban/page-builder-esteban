@@ -3,8 +3,13 @@
 [ngStyle]="{'background-color': bgColor, 'color': bgColor}">
    <p 
    [ngStyle]="{'color': fgColor}"
-   [ngClass]="{'six-char': (thought?.preview!.length < 6),
-   'eight-ten-char': (thought?.preview!.length > 6)}">
+   [ngClass]="{
+   'three-char': (thought?.preview!.length < 7),
+   'four-char': (thought?.preview!.length > 6 && thought?.preview!.length < 9),
+   'five-char': (thought?.preview!.length > 8 && thought?.preview!.length < 16),
+   'six-char': (thought?.preview!.length > 15 && thought?.preview!.length < 19),
+   'seven-char': (thought?.preview!.length > 18)
+   }">
    {{thought?.preview}}
    </p>
 </div>
