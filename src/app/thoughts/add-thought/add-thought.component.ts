@@ -2,7 +2,7 @@ import { Component, Output, EventEmitter } from '@angular/core';
 import { ThoughtService } from '../thought.service';
 
 @Component({
-  selector: 'app-add-thought',
+  selector: 'thoughts-add-thought',
   templateUrl: './add-thought.component.html',
   styleUrls: ['./add-thought.component.css']
 })

@@ -3,7 +3,7 @@ import {ThoughtService} from '../thought.service';
 import {Thought} from '../thought'
 
 @Component({
-  selector: 'app-grid-thoughts',
+  selector: 'thoughts-grid-thoughts',
   templateUrl: './grid-thoughts.component.html',
   styleUrls: ['./grid-thoughts.component.css']
 })

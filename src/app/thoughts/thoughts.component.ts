@@ -1,12 +1,11 @@
 import { Component} from '@angular/core';
-import { SelectedBoxService } from '../selected-box.service';
-import { ThoughtService } from '../thought.service';
-import {Thought} from '../thought';
-import { Oops } from '../error';
+import { SelectedBoxService } from './selected-box.service';
+import { ThoughtService } from './thought.service';
+import {Thought} from './thought';
 import { ErrorHandlingService } from '../error-handling.service';
 
 @Component({
-  selector: 'app-thoughts',
+  selector: 'thoughts-thoughts',
   templateUrl: './thoughts.component.html',
   styleUrls: ['./thoughts.component.css']
 })
@@ -15,13 +14,9 @@ export class ThoughtsComponent  {
   thought: Thought | null = null;
   isThought: boolean = false;
   constructor(private selectedBox: SelectedBoxService, 
-    private thoughtService: ThoughtService, 
-    private errorService: ErrorHandlingService) { 
+    private thoughtService: ThoughtService) { 
     this.thoughtService.isCreating.subscribe(msg => {
-
       this.isCreating = msg
-      console.log("indeed - "+ msg) 
-      
     })  
     this.selectedBox.currentThought.subscribe(msg => {
       if(msg != null) {

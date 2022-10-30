@@ -3,7 +3,7 @@ import { SelectedBoxService } from '../selected-box.service';
 import {Thought} from '../thought';
 
 @Component({
-  selector: 'app-box-thought',
+  selector: 'thoughts-box-thought',
   templateUrl: './box-thought.component.html',
   styleUrls: ['./box-thought.component.css']
 })
@@ -19,8 +19,11 @@ export class BoxThoughtComponent implements OnInit {
   touched = false
   fontSize = "20px"
   toggleTouch(): void {
-    if (!this.dummy) {
+    if (this.dummy) {
       this.touched = !this.touched
+    }
+    else {
+      this.touched = true 
       this.selectedBox.updateThought(this.thought)
     }
   }
@@ -34,12 +37,12 @@ export class BoxThoughtComponent implements OnInit {
   ]
 
   fgColors = [
-    "#614143",
-    "#5e413f",
-    "#5f483b",
-    "#47513a",
-    "#385147",
-    "#3d435d",
+    "#945054",
+    "#9f625f",
+    "#8d664f",
+    "#6d8352",
+    "#53826f",
+    "#495380",
   ]
   bgColor = "#ffffff" 
   fgColor = "#ffffff" 

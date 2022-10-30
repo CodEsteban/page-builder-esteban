@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Observable, throwError , BehaviorSubject } from 'rxjs';
-import {catchError} from 'rxjs/operators'; 
+import { Injectable, } from '@angular/core';
+import { Observable, throwError , BehaviorSubject, TimeoutError, of } from 'rxjs';
+import {catchError, timeout,} from 'rxjs/operators'; 
+import { remoteThoughtUrl, localThoughtUrl } from './variables';
 import {NewThought, Thought} from './thought'
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import { Oops } from './error';
-import { ErrorHandlingService } from './error-handling.service';
+import { Oops } from '../error';
+import { ErrorHandlingService } from '../error-handling.service';
 
 
 
@@ -14,11 +15,17 @@ import { ErrorHandlingService } from './error-handling.service';
 
 export class ThoughtService {
 
+  private allThought: Thought[]= []
 
+  private getThoughtsUrl = localThoughtUrl+"/t/get"
+  addThought(thought: Thought) {
+    this.allThought.unshift(thought)
+    of(this.allThought)
+  }
 
-  private getThoughtsUrl = "http://thought:3001/t/get"
   getThoughts():Observable<Thought[]>{
-    return this.http.get<Thought[]>(this.getThoughtsUrl).pipe()
+    this.http.get<Thought[]>(this.getThoughtsUrl).subscribe(msg => this.allThought = msg)
+    return of(this.allThought)
   }
 
   constructor(private http: HttpClient, private errorService: ErrorHandlingService) {}
@@ -26,13 +33,13 @@ export class ThoughtService {
   handleError(error: HttpErrorResponse) {
     console.log("handling error", error)
 
-    if(error.status === 400) {
+    if (error instanceof TimeoutError) {
       let oops: Oops = {
-        type: "Incormacion incorrecta",
-        details: "Que extrano."
+        type: "Tiempo excedido",
+        details: "Ha pasado mucho tiempo para procesar la peticion, intentalo de nuevo mas tarde"
       }
       return throwError(() => oops);
-    }  
+    }
 
     if (error.status == 0){
       let oops: Oops = {
@@ -45,7 +52,7 @@ export class ThoughtService {
     if(error.status == 403) {
       let oops: Oops = {
         type: "Codigo Incorrecto",
-        details: "por favor revise el codigo."
+        details: "El codigo pudo ya haberse usado o es erroneo, por favor revise el codigo"
       }
       return throwError(() => oops);
     }   
@@ -56,7 +63,7 @@ export class ThoughtService {
       }
       return throwError(() => oops);
   }
-  private newThoughtUrl = "http://localhost:3001/t/new"
+  private newThoughtUrl = remoteThoughtUrl+"/t/new/"
   createNewThought(thought: NewThought): Observable<Object>{
     let code = thought.id 
     let history = thought.history
@@ -83,8 +90,11 @@ export class ThoughtService {
       return throwError(() => oops);
     }
     console.log("post sent")
-    let thoughtJson = JSON.stringify(thought)
-    return this.http.post(this.newThoughtUrl, thoughtJson).pipe(catchError(this.handleError))
+//    let thoughtJson = JSON.stringify(thought)
+    console.log(thought)
+    return this.http.post<NewThought>(this.newThoughtUrl, thought).pipe(
+      timeout(5000),
+      catchError(this.handleError))
   }
 
   private creating: BehaviorSubject<boolean>= new BehaviorSubject(false)

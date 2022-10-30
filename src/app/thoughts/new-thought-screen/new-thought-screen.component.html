@@ -2,7 +2,7 @@
    <div class="popup" (click)="$event.stopPropagation()" >
       <div class="preview">
          <input maxlength="28" id="fpreview"[(ngModel)]="preview.preview"/>
-         <app-box-thought [thought]="preview"[dummy]="true" ></app-box-thought>
+         <thoughts-box-thought [thought]="preview"[dummy]="true" ></thoughts-box-thought>
          <label for="fcode">Código</label>
          <input type="text" inputmode="numeric" [(ngModel)]="code" id="fcode" name="fcode">
          <div id="ok-button" (keyup.enter)="onOK()" (click)="onOK()"><p>Ok</p></div>

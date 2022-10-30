@@ -1,0 +1,26 @@
+.background {
+   height: 100vh;
+   width:  100vw;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+h1 {
+   font-family: Hack;
+   text-align: center;
+}
+
+.box {
+   transition: transform .1s ease-in-out;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height:200px;
+   width: 200px;
+   background-color: #212421;
+}
+
+.box:hover {
+   box-shadow: 0px 0px 6px 1px;
+   transform: scale(1.3);
+}

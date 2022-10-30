@@ -39,7 +39,7 @@ form {
    display: flex;
    flex-direction: column;
 }
-app-box-thought{
+thoughts-box-thought{
    margin-top: 15px;
    margin-bottom: 30px;
 }

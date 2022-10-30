@@ -9,7 +9,7 @@
     "test": "ng test",
     "dev:ssr": "ng run page-builder:serve-ssr",
     "serve:ssr": "node dist/page-builder/server/main.js",
-    "build:ssr": "ng build && ng run page-builder:server",
+    "build:ssr": "ng build --base-href / && ng run page-builder:server",
     "prerender": "ng run page-builder:prerender"
   },
   "private": true,

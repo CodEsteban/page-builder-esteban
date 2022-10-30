@@ -1,5 +1,5 @@
-<app-navbar [hidden]="isThought"></app-navbar>
-<app-new-thought-screen [hidden]="!isCreating"></app-new-thought-screen>
-<app-add-thought></app-add-thought>
-<app-box-details [ngClass]="{'hide-panel':!isThought, 'show-panel':isThought}"></app-box-details> 
-<app-grid-thoughts [ngClass]="{'resized-grid':isThought, 'normal-grid':!isThought}"></app-grid-thoughts> 
+<thoughts-navbar [hidden]="isThought"></thoughts-navbar>
+<thoughts-new-thought-screen [hidden]="!isCreating"></thoughts-new-thought-screen>
+<thoughts-add-thought></thoughts-add-thought>
+<thoughts-box-details [ngClass]="{'hide-panel':!isThought, 'show-panel':isThought}"></thoughts-box-details> 
+<thoughts-grid-thoughts [ngClass]="{'resized-grid':isThought, 'normal-grid':!isThought}"></thoughts-grid-thoughts> 

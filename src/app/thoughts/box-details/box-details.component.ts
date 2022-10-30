@@ -3,7 +3,7 @@ import { SelectedBoxService } from '../selected-box.service';
 import { Thought } from '../thought';
 
 @Component({
-  selector: 'app-box-details',
+  selector: 'thoughts-box-details',
   templateUrl: './box-details.component.html',
   styleUrls: ['./box-details.component.css']
 })

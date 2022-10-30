@@ -1,12 +1,28 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { LifeProjectComponent } from './life-project/life-project/life-project.component';
+import { RouterModule, Routes, PreloadingStrategy } from '@angular/router';
+import { ThoughtsComponent } from './thoughts/thoughts.component';
+import { FourofourComponent } from './fourofour/fourofour.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+{
+  path: "life/hello",
+  component: LifeProjectComponent,
+},{
+  path: "",
+  component: ThoughtsComponent,
+},{
+  path: "**",
+  component: FourofourComponent,
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
-})],
+    initialNavigation: 'enabledBlocking',
+    preloadingStrategy: PreloadingStrategy,
+},
+)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
