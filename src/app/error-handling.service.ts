@@ -9,7 +9,6 @@ export class ErrorHandlingService {
   private err: BehaviorSubject<any>= new BehaviorSubject(false)
   currentError = this.err.asObservable();
   popupError(oops: Oops) {
-    console.log(oops,"heYEHEYEHEY")
     this.err.next(oops);
   }
   toggleCurrentError() {

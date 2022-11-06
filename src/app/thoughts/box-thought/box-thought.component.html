@@ -2,7 +2,6 @@
 [ngClass]="{'touched': touched}" (click)="toggleTouch()" 
 [ngStyle]="{'background-color': bgColor, 'color': bgColor}">
    <p 
-   [ngStyle]="{'color': fgColor}"
    [ngClass]="{
    'three-char': (thought?.preview!.length < 7),
    'four-char': (thought?.preview!.length > 6 && thought?.preview!.length < 9),

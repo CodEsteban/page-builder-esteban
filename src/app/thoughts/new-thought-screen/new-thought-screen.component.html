@@ -1,5 +1,5 @@
-<div (click)="toggleShow()" class="dark-screen">
-   <div class="popup" (click)="$event.stopPropagation()" >
+<div (click)="toggleShow()" class="dark-screen" [ngClass]="{'keyboard-dark-screen': isKeyboard, 'dark-screen': !isKeyboard}">
+   <div class="popup" (click)="$event.stopPropagation()" [ngClass]="{'keyboard': isKeyboard}" >
       <div class="preview">
          <input maxlength="28" id="fpreview"[(ngModel)]="preview.preview"/>
          <thoughts-box-thought [thought]="preview"[dummy]="true" ></thoughts-box-thought>

@@ -122,6 +122,9 @@
         },
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "port": 80
+          },
           "configurations": {
             "development": {
               "browserTarget": "page-builder:build:development",

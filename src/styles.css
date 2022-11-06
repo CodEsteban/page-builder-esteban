@@ -27,7 +27,7 @@ thoughts-thoughts {
    box-sizing: border-box;
 }
 
-.unselectable, p, h3, label  {
+.unselectable, p, h3, label, h2, h1  {
    -webkit-user-select: none; 
    -moz-user-select: none;  
    -ms-user-select: none;

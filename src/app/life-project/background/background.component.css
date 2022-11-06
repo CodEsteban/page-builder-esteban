@@ -1,0 +1,22 @@
+div {
+   border-radius: 8px;
+   width: 500px;
+   background-color: white;
+   padding: 10px 20px;
+   height: 95vh;
+   box-shadow: 5px 5px 10px rgb(183, 183, 183);
+   display: flex;
+   align-items: center;
+   word-wrap: break-word;
+   flex-direction: column;
+   overflow: scroll;
+}
+
+@media (max-width:590px) { 
+   div {
+      width: 93vw;
+      height: 100vh;
+      border-radius: 0;
+      box-shadow: 2px 2px 5px rgb(183, 183, 183);
+   }
+}

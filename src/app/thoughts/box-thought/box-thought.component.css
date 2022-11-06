@@ -22,7 +22,7 @@ p {
    text-align: center;
    margin: 0;
    font-family: Hack;
-   color: black;
+   color: rgba(0, 0, 0, 0.326);
    text-overflow: ellipsis;
 }
 

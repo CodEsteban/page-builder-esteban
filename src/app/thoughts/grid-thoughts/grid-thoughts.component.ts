@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {ThoughtService} from '../thought.service';
+import { Component,OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import {ThoughtService} from '../../thought.service';
 import {Thought} from '../thought'
 
 @Component({
@@ -7,19 +8,12 @@ import {Thought} from '../thought'
   templateUrl: './grid-thoughts.component.html',
   styleUrls: ['./grid-thoughts.component.css']
 })
-export class GridThoughtsComponent{
+export class GridThoughtsComponent implements OnInit {
   boxes: Thought[] = [];
-  constructor(private thoughtService: ThoughtService){
-    this.onInit()
+  constructor(private thoughtService: ThoughtService, private http: HttpClient){
+    this.thoughtService.allThought.subscribe(msg => this.boxes = msg )
   }
-
-  onInit() {
-    try {
-      this.thoughtService.getThoughts().subscribe(msg => {
-        this.boxes = msg
-      })
-    } catch(e){
-      console.log(e)
-    }
-  } 
+  private getThoughtsUrl = "http://thought:3001"+"/t/get/"
+  ngOnInit(){
+  }
 }

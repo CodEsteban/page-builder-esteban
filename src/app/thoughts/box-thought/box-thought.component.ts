@@ -36,20 +36,10 @@ export class BoxThoughtComponent implements OnInit {
     "#C7CEEA",
   ]
 
-  fgColors = [
-    "#945054",
-    "#9f625f",
-    "#8d664f",
-    "#6d8352",
-    "#53826f",
-    "#495380",
-  ]
   bgColor = "#ffffff" 
-  fgColor = "#ffffff" 
   ngOnInit(): void {
     let randomIndex = Math.floor(Math.random() * 6)
     this.bgColor = this.bgColors[randomIndex]
-    this.fgColor = this.fgColors[randomIndex]
     this.selectedBox.currentThought.subscribe(msg => {
       if(this.touched && msg != this.thought) { 
         this.touched = false

@@ -1,9 +1,9 @@
-import { Component, } from '@angular/core';
+import { Component} from '@angular/core';
 import { NewThought, Thought } from '../thought';
-import { ThoughtService } from '../thought.service';
+import { ThoughtService } from '../../thought.service';
+import { map, fromEvent, debounceTime} from 'rxjs';
 import { ErrorHandlingService } from '../../error-handling.service';
 import { Oops } from '../../error';
-import * as e from 'express';
 
 @Component({
   selector: 'thoughts-new-thought-screen',
@@ -16,11 +16,13 @@ export class NewThoughtScreenComponent {
     history:"",
     title:"",
   }
+  isKeyboard:boolean = false
   code = ""
   title = ""
   history = ""
+  scaleSize = 1
+  windowHeight = 1000
   onOK() {
-    console.log(this.preview.preview + " " + this.code + " "+ this.title + " "+ this.history)
     let newThought: NewThought = {
       preview: this.preview.preview,
       history: this.history,
@@ -45,6 +47,15 @@ export class NewThoughtScreenComponent {
   toggleShow() {
     this.thoughtService.toggleCreating()
   }
-
-  constructor(private thoughtService: ThoughtService, private errorService: ErrorHandlingService) {}
+  checkScreenSize() :boolean {
+    let height = document.body.offsetHeight    
+    return height < 590 ? true : false
+  };
+  constructor(private thoughtService: ThoughtService, private errorService: ErrorHandlingService) {
+    const screenSizeChanged = fromEvent(window, 'resize').pipe(debounceTime(200), map(this.checkScreenSize));
+    screenSizeChanged.subscribe(msg => {
+      this.scaleSize = this.windowHeight / 620
+      this.isKeyboard = msg
+    })
+  }
 }

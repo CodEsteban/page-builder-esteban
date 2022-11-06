@@ -1,13 +1,25 @@
 import { NgModule } from '@angular/core';
-import { LifeProjectComponent } from './life-project/life-project/life-project.component';
-import { RouterModule, Routes, PreloadingStrategy } from '@angular/router';
+import { PreambleComponent } from './life-project/preamble/preamble.component';
+import { IamComponent } from './life-project/iam/iam.component';
+import { RouterModule, Routes } from '@angular/router';
 import { ThoughtsComponent } from './thoughts/thoughts.component';
 import { FourofourComponent } from './fourofour/fourofour.component';
+import { FamilyComponent } from './life-project/family/family.component';
+import { WorkComponent } from './life-project/work/work.component';
 
 const routes: Routes = [
 {
-  path: "life/hello",
-  component: LifeProjectComponent,
+  path: "life/work",
+  component: WorkComponent,
+},{
+  path: "life/preamble",
+  component: PreambleComponent,
+},{
+  path: "life/iam",
+  component: IamComponent,
+},{
+  path: "life/family",
+  component: FamilyComponent,
 },{
   path: "",
   component: ThoughtsComponent,
@@ -20,7 +32,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
     initialNavigation: 'enabledBlocking',
-    preloadingStrategy: PreloadingStrategy,
 },
 )],
   exports: [RouterModule]

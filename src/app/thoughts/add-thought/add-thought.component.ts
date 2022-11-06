@@ -1,5 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
-import { ThoughtService } from '../thought.service';
+import { ThoughtService } from '../../thought.service';
 
 @Component({
   selector: 'thoughts-add-thought',

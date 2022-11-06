@@ -1,6 +1,6 @@
 import { Component} from '@angular/core';
 import { SelectedBoxService } from './selected-box.service';
-import { ThoughtService } from './thought.service';
+import { ThoughtService } from '../thought.service';
 import {Thought} from './thought';
 import { ErrorHandlingService } from '../error-handling.service';
 
