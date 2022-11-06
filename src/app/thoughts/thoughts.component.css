@@ -40,3 +40,10 @@ thoughts-box-details {
    margin-right: 80vw;
    transition: margin-top .7s ease,margin-right .5s ease;
 }
+
+@media only screen and (max-width: 524px) {
+   .resized-grid {
+      margin-bottom: 50px;
+      margin-top: 0px;
+   }
+}
